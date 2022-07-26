@@ -24,10 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.petmanagment.R;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -83,29 +81,26 @@ public class FinalPetActivity extends AppCompatActivity {
         storageRef = storage.getReference();
         db = FirebaseFirestore.getInstance();
 
-        db.collection(user.getEmail()).document(infocustomer).collection(infocustomer).document(info).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String content;
+        db.collection(user.getEmail()).document(infocustomer).collection(infocustomer).document(info).get().addOnSuccessListener(documentSnapshot -> {
+            String content;
 
-                id = documentSnapshot.getString("uuid");
-                name = documentSnapshot.getString("name");
-                race = documentSnapshot.getString("race");
-                typology = documentSnapshot.getString("typology");
+            id = documentSnapshot.getString("uuid");
+            name = documentSnapshot.getString("name");
+            race = documentSnapshot.getString("race");
+            typology = documentSnapshot.getString("typology");
 
-                content = String.format("Name: %s\nAnimal: %s\nRace: %s\n", name, typology, race);
-                petInfo.setText(content);
+            content = String.format("Name: %s\nAnimal: %s\nRace: %s\n", name, typology, race);
+            petInfo.setText(content);
 
-                assert id != null;
+            assert id != null;
 
-                storageRef.child(id).getDownloadUrl().addOnSuccessListener(uri -> {
-                    imCam.setVisibility(View.INVISIBLE);
-                    Glide
-                            .with(getApplicationContext())
-                            .load(uri)
-                            .into(imPet);
-                }).addOnFailureListener(e -> System.out.println("no image"));
-            }
+            storageRef.child(id).getDownloadUrl().addOnSuccessListener(uri -> {
+                imCam.setVisibility(View.INVISIBLE);
+                Glide
+                        .with(getApplicationContext())
+                        .load(uri)
+                        .into(imPet);
+            }).addOnFailureListener(e -> System.out.println("no image"));
         });
 
         imPet.setOnClickListener(view -> {

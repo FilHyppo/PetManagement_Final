@@ -35,6 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 
 import java.util.ArrayList;
@@ -296,13 +297,27 @@ public class CustomersFragment extends Fragment {
                     if (task.isSuccessful()) {
                         Toast.makeText(getContext(), "Customer edited successfully", Toast.LENGTH_LONG).show();
                         if (!fileName.equals(customerName))
-                            db.collection(user.getEmail()).document(customerName).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            db.collection(user.getEmail()).document(customerName).collection(customerName).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                                 @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    customers.clear();
-                                    getCustomers(customers);
+                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                    for(QueryDocumentSnapshot q: queryDocumentSnapshots)
+                                    {
+                                        db.collection(user.getEmail()).document(fileName).collection(fileName).document(q.getId()).set(q.getData(),SetOptions.merge());
+                                    }
+                                }
+                            }).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    db.collection(user.getEmail()).document(customerName).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            customers.clear();
+                                            getCustomers(customers);
+                                        }
+                                    });
                                 }
                             });
+
                     }
                 });
             }
