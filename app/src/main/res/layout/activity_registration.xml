@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background3"
-    tools:context=".login.RegistrationActivity"
+    tools:context="it.release.petmanagment.login.RegistrationActivity"
     android:id="@+id/relativeLayout">
 
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context=".ui.Settings.SettingsFragment">
+    tools:context="it.release.petmanagment.ui.Settings.SettingsFragment">
 
     <TextView
         android:id="@+id/text_settings"

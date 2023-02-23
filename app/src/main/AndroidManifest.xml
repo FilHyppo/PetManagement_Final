@@ -22,19 +22,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetManagment">
         <activity
-            android:name=".login.TermsAndConditions"
+            android:name="it.release.petmanagment.login.TermsAndConditions"
             android:exported="false" />
         <activity
-            android:name=".ui.home.MyDatesActivity"
+            android:name="it.release.petmanagment.ui.home.MyDatesActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.DateActivity"
+            android:name="it.release.petmanagment.ui.home.DateActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Customers.Pet.FinalPetActivity"
+            android:name="it.release.petmanagment.ui.Customers.Pet.FinalPetActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.Customers.Pet.PetActivity"
+            android:name="it.release.petmanagment.ui.Customers.Pet.PetActivity"
             android:exported="false" />
 
         <provider
@@ -48,18 +48,18 @@
         </provider>
 
         <activity
-            android:name=".HomeActivity"
+            android:name="it.release.petmanagment.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.PetManagment.NoActionBar" />
         <activity
-            android:name=".login.ForgotPWActivity"
+            android:name="it.release.petmanagment.login.ForgotPWActivity"
             android:exported="true" />
         <activity
-            android:name=".login.RegistrationActivity"
+            android:name="it.release.petmanagment.login.RegistrationActivity"
             android:exported="true" />
         <activity
-            android:name=".login.MainActivity"
+            android:name="it.release.petmanagment.login.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

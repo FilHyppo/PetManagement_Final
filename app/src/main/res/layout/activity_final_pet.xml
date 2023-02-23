@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background5"
-    tools:context=".ui.Customers.Pet.PetActivity">
+    tools:context="it.release.petmanagment.ui.Customers.Pet.PetActivity">
 
     <Button
         android:id="@+id/pet_PDF_btn"
