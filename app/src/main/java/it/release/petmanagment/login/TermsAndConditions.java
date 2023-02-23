@@ -40,7 +40,7 @@ public class TermsAndConditions extends AppCompatActivity {
         termsCheckBox.setOnCheckedChangeListener((compoundButton, b) -> {
             if(b){
                 materialAlertDialogBuilder.setTitle("Terms and conditions");
-                materialAlertDialogBuilder.setMessage("I accept the processing of personal data");
+                materialAlertDialogBuilder.setMessage("see our policy at https://sites.google.com/view/petmanagement");
                 materialAlertDialogBuilder.setPositiveButton("Accept", (dialogInterface, i) -> {
                     checkButton.setEnabled(true);
                     editor.putBoolean("termsAndConditions", true);
