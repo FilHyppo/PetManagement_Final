@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -23,6 +23,11 @@ import com.example.petmanagment.login.MainActivity;
 import com.example.petmanagment.login.PhotoCreator;
 import com.example.petmanagment.ui.Customers.CustomersFragment;
 import com.example.petmanagment.ui.home.HomeFragment;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -30,6 +35,8 @@ import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private AdView adView;
+    private AdRequest adRequest;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
 
@@ -41,9 +48,31 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+
+        //codice per Ads
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+                Toast.makeText(HomeActivity.this,"init completed",Toast.LENGTH_LONG).show();
+            }
+        });
+        adView=findViewById(R.id.bannerAds);
+        adRequest=new AdRequest.Builder().build();
+        System.out.println(adRequest.getContentUrl());
+        adView.loadAd(adRequest);
+
+
+        //fine codice per Ads
+
+
+
+
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         setSupportActionBar(binding.appBarHome.toolbar);
