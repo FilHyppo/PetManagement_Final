@@ -22,8 +22,8 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.petmanagment.R;
-import com.example.petmanagment.databinding.FragmentCustomersBinding;
+import it.release.petmanagment.R;
+import it.release.petmanagment.databinding.FragmentCustomersBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;

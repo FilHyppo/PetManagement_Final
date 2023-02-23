@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.example.petmanagment.R;
+import it.release.petmanagment.R;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class TermsAndConditions extends AppCompatActivity {

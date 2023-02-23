@@ -10,7 +10,7 @@ android {
         implementation.exclude 'module':'protobuf-java'
     }
     defaultConfig {
-        applicationId "com.example.petmanagment"
+        applicationId "it.release.petmanagment"
         minSdk 21
         targetSdk 32
         versionCode 1

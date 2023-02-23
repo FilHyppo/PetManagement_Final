@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.petmanagment.R;
-import com.example.petmanagment.databinding.FragmentSettingsBinding;
+import it.release.petmanagment.R;
+import it.release.petmanagment.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends Fragment {
 

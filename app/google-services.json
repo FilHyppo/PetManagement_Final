@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:4644610521:android:3425bf0c9fb10afde479c8",
         "android_client_info": {
-          "package_name": "com.example.petmanagment"
+          "package_name": "it.release.petmanagment"
         }
       },
       "oauth_client": [

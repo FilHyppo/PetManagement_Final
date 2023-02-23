@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.petmanagment.R;
-import com.example.petmanagment.databinding.FragmentHomeBinding;
+import it.release.petmanagment.R;
+import it.release.petmanagment.databinding.FragmentHomeBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;

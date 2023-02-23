@@ -18,8 +18,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.petmanagment.R;
-import com.example.petmanagment.databinding.ActivityHomeBinding;
+import it.release.petmanagment.R;
+import it.release.petmanagment.databinding.ActivityHomeBinding;
 import it.release.petmanagment.login.MainActivity;
 import it.release.petmanagment.login.PhotoCreator;
 import it.release.petmanagment.ui.Customers.CustomersFragment;
