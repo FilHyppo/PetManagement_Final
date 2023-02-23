@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetManagment">
         <activity
+            android:name=".login.TermsAndConditions"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.MyDatesActivity"
             android:exported="false" />
         <activity
